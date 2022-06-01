@@ -13,7 +13,7 @@ function list_action {
 }
 
 function done_action {
-    echo "done"
+    sed -i "$1"s/0/1/ $file_name
 }
 
 function find_action {
@@ -54,7 +54,7 @@ add)
     add_action "$option_title" $option_priority
     ;;
 list) list_action ;;
-done) done_action ;;
+done) done_action "$1" ;;
 find) find_action "$1" ;;
 clear) clear_action ;;
 *)
