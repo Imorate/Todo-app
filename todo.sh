@@ -9,7 +9,7 @@ function add_action {
 }
 
 function list_action {
-    echo "list"
+    awk -F\, '{print NR" | "$1" | " $2 " | " $3}' $file_name
 }
 
 function done_action {
@@ -55,10 +55,10 @@ add)
     ;;
 list) list_action ;;
 done) done_action ;;
-find) find_action ;;
+find) find_action "$1" ;;
 clear) clear_action ;;
 *)
-    echo "Invalid action"
+    echo "Command Not Supported!"
     exit 2
     ;;
 esac
