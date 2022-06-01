@@ -17,7 +17,7 @@ function done_action {
 }
 
 function find_action {
-    echo "find"
+    list_action | grep -i "$1"
 }
 
 function clear_action {
