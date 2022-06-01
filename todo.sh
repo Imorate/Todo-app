@@ -2,8 +2,10 @@
 action=$1
 shift
 
+file_name=tasks.csv
+
 function add_action {
-    echo "0,$2,\"$1\"" >>tasks.csv
+    echo "0,$2,\"$1\"" >>$file_name
 }
 
 function list_action {
@@ -19,7 +21,7 @@ function find_action {
 }
 
 function clear_action {
-    echo "clear"
+    truncate -s 0 $file_name
 }
 
 case "$action" in
