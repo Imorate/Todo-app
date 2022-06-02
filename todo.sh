@@ -44,7 +44,10 @@ add)
             L | l) option_priority=L ;;
             M | m) option_priority=M ;;
             H | h) option_priority=H ;;
-            *) echo "Option -p|--priority Only Accept L|M|H" ;;
+            *)
+                echo "Option -p|--priority Only Accept L|M|H"
+                exit
+                ;;
             esac
             shift
             shift
